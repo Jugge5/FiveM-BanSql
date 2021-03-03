@@ -1,3 +1,17 @@
+function canusemenu(player)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	local group = xPlayer.getGroup()
+	local right = false
+
+	for i = 1 , #Config.MenuPermission do
+		if group == Config.MenuPermission[i] then
+			right = true
+			break
+		end
+	end
+	return(right)
+end
+
 function cmdban(source, args)
 	local license,identifier,liveid,xblid,discord,playerip
 	local target    = tonumber(args[1])

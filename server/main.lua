@@ -95,36 +95,37 @@ end, true)
 
 
 TriggerEvent('es:addGroupCommand', 'sqlban', Config.Permission, function (source, args, user)
+TriggerEvent('es:addGroupCommand', 'sqlban', Config.CmdPermission, function (source, args, user)
 	cmdban(source, args)
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM ', 'Insufficient Permissions.' } })
 end, {help = Text.ban, params = {{name = "id"}, {name = "day", help = Text.dayhelp}, {name = "reason", help = Text.reason}}})
 
-TriggerEvent('es:addGroupCommand', 'sqlunban', Config.Permission, function (source, args, user)
+TriggerEvent('es:addGroupCommand', 'sqlunban', Config.CmdPermission, function (source, args, user)
 	cmdunban(source, args)
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM ', 'Insufficient Permissions.' } })
 end, {help = Text.unban, params = {{name = "name", help = Text.steamname}}})
 
-TriggerEvent('es:addGroupCommand', 'sqlsearch', Config.Permission, function (source, args, user)
+TriggerEvent('es:addGroupCommand', 'sqlsearch', Config.CmdPermission, function (source, args, user)
 	cmdsearch(source, args)
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM ', 'Insufficient Permissions.' } })
 end, {help = Text.bansearch, params = {{name = "name", help = Text.steamname}}})
 
-TriggerEvent('es:addGroupCommand', 'sqlbanoffline', Config.Permission, function (source, args, user)
+TriggerEvent('es:addGroupCommand', 'sqlbanoffline', Config.CmdPermission, function (source, args, user)
 	cmdbanoffline(source, args)
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM ', 'Insufficient Permissions.' } })
 end, {help = Text.banoff, params = {{name = "permid", help = Text.permid}, {name = "day", help = Text.dayhelp}, {name = "reason", help = Text.reason}}})
 
-TriggerEvent('es:addGroupCommand', 'sqlbanhistory', Config.Permission, function (source, args, user)
+TriggerEvent('es:addGroupCommand', 'sqlbanhistory', Config.CmdPermission, function (source, args, user)
 	cmdbanhistory(source, args)
 end, function(source, args, user)
 	TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM ', 'Insufficient Permissions.' } })
 end, {help = Text.history, params = {{name = "name", help = Text.steamname}, }})
 
-TriggerEvent('es:addGroupCommand', 'sqlbanreload', Config.Permission, function (source)
+TriggerEvent('es:addGroupCommand', 'sqlbanreload', Config.CmdPermission, function (source)
   BanListLoad        = false
   BanListHistoryLoad = false
   Wait(5000)
